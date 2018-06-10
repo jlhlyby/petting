@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="147px"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/fh_cation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="400px"
+        android:layout_marginTop="20px"
+        android:text="关注"
+        android:textColor="@drawable/text_black_grey_selector"
+        android:textSize="48px" />
+
+    <TextView
+        android:id="@+id/fh_cation"
+        android:layout_width="84px"
+        android:layout_height="12px"
+        android:layout_below="@id/fh_cation_text"
+        android:layout_marginLeft="405px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/color_yellow_to_orange"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/fh_share_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="400px"
+        android:layout_marginTop="20px"
+        android:text="推荐"
+        android:textColor="@drawable/text_black_grey_selector"
+        android:textSize="48px" />
+
+    <TextView
+        android:id="@+id/fh_share"
+        android:layout_width="84px"
+        android:layout_height="12px"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fh_share_text"
+        android:layout_marginRight="405px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/color_yellow_to_orange"
+        android:visibility="invisible" />
+
+    <View
+        style="@style/myLine_h"
+        android:layout_marginTop="112px" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fh_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="113px" />
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

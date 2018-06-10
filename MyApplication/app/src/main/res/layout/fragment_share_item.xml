@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/fsi_use0"
+        android:layout_width="match_parent"
+        android:layout_height="117px">
+
+        <TextView
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48px"
+            android:layout_centerVertical="true"
+            android:text="您可能感兴趣的"
+            android:textColor="@color/text_black_50"
+            android:textSize="42px" />
+
+        <ImageView
+            android:id="@+id/fsi_del"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="48px"
+            android:src="@mipmap/close" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/myLine_h"
+        android:layout_below="@id/fsi_use0" />
+
+    <RelativeLayout
+        android:id="@+id/fci_icon_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48px"
+        android:layout_marginTop="129px">
+        <!--宠物小头像-->
+        <com.petting.app.view.CircularImage
+            android:id="@+id/fci_icon"
+            android:layout_width="108px"
+            android:layout_height="108px"
+            android:src="@mipmap/ic_launcher" />
+        <!--昵称-->
+        <TextView
+            android:id="@+id/fci_name"
+            style="@style/text_sans_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="138px"
+            android:layout_marginTop="3px"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="48px" />
+        <!--性别-->
+        <ImageView
+            android:id="@+id/fci_sex"
+            android:layout_width="33px"
+            android:layout_height="39px"
+            android:layout_marginLeft="15px"
+            android:layout_marginTop="16px"
+            android:layout_toRightOf="@id/fci_name"
+            android:src="@drawable/sex_type_selector" />
+
+        <!--宠物类别-->
+        <TextView
+            android:id="@+id/fci_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="39px"
+            android:layout_marginTop="36px"
+            android:layout_toRightOf="@id/fci_sex"
+            android:background="@color/textview_bac_grey"
+            android:textColor="@color/text_grey_50"
+            android:textSize="30px" />
+        <!--发布时间-->
+        <TextView
+            android:id="@+id/fci_time"
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fci_name"
+            android:layout_marginLeft="138px"
+            android:layout_marginTop="12px"
+            android:text="1分钟"
+            android:textSize="36px" />
+
+        <TextView
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fci_name"
+            android:layout_marginTop="12px"
+            android:layout_toRightOf="@id/fci_time"
+            android:text="前"
+            android:textSize="36px" />
+    </RelativeLayout>
+    <!--大图片-->
+    <ImageView
+        android:id="@+id/fci_pic"
+        android:layout_width="match_parent"
+        android:layout_height="807px"
+        android:layout_below="@id/fci_icon_click"
+        android:layout_marginTop="25px"
+        android:src="@mipmap/ic_launcher" />
+    <!--图片数量-->
+    <TextView
+        android:id="@+id/fci_pic_num"
+        android:layout_width="93px"
+        android:layout_height="54px"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fci_icon_click"
+        android:layout_marginRight="36px"
+        android:layout_marginTop="735px"
+        android:background="@drawable/bac_shadom_black"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/text_white_80"
+        android:textSize="36px"
+        android:textStyle="bold" />
+    <!--分享感言-->
+    <TextView
+        android:id="@+id/fci_con"
+        style="@style/text_sans_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fci_pic"
+        android:layout_marginLeft="48px"
+        android:layout_marginRight="48px"
+        android:layout_marginTop="39px"
+        android:text="@string/app_name"
+        android:textSize="48px"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/fci_app_tag_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fci_con"
+        android:layout_marginLeft="48px"
+        android:layout_marginTop="15px">
+
+        <TextView
+            android:id="@+id/fci_use0"
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="来自"
+            android:textColor="@color/text_black_80"
+            android:textSize="36px" />
+
+        <!--用户小头像-->
+        <com.petting.app.view.CircularImage
+            android:id="@+id/fci_icon_app"
+            android:layout_width="45px"
+            android:layout_height="45px"
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@id/fci_use0"
+            android:src="@mipmap/ic_launcher" />
+
+        <!--app用户昵称-->
+        <TextView
+            android:id="@+id/fci_app_name"
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@id/fci_icon_app"
+            android:text="@string/app_name"
+            android:textColor="@color/text_black_80"
+            android:textSize="36px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fci_addr_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fci_con"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="15px"
+        android:background="@drawable/bac_shadom_grey"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <ImageView
+            android:id="@+id/fci_use1"
+            android:layout_width="36px"
+            android:layout_height="44px"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/gps_icon" />
+        <!--定位地址-->
+        <TextView
+            android:id="@+id/fci_addr"
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10px"
+            android:layout_toRightOf="@id/fci_use1"
+            android:text="中国·杭州"
+            android:textSize="36px" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fci_use2"
+        style="@style/myLine_h_3"
+        android:layout_below="@id/fci_app_tag_click"
+        android:layout_marginLeft="48px"
+        android:layout_marginRight="48px"
+        android:layout_marginTop="37px" />
+
+    <RelativeLayout
+        android:id="@+id/fci_zan_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fci_use2"
+        android:layout_marginLeft="48px"
+        android:layout_marginTop="15px">
+
+        <ImageView
+            android:layout_width="120px"
+            android:layout_height="102px"
+            android:layout_marginTop="7px"
+            android:src="@mipmap/zan_icon" />
+        <!--赞的数量-->
+        <TextView
+            android:id="@+id/fci_zan_num"
+            style="@style/text_sans_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="72px"
+            android:text="0"
+            android:textColor="@color/text_orange"
+            android:textSize="42px"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fci_comment_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fci_use2"
+        android:layout_marginLeft="39px"
+        android:layout_marginTop="15px"
+        android:layout_toRightOf="@id/fci_zan_click">
+
+        <ImageView
+            android:layout_width="102px"
+            android:layout_height="102px"
+            android:layout_marginTop="7px"
+            android:src="@mipmap/comment_icon" />
+        <!--评论的数量-->
+        <TextView
+            android:id="@+id/fci_comment_num"
+            style="@style/text_sans_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="63px"
+            android:text="0"
+            android:textColor="@color/text_orange"
+            android:textSize="42px"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <!--分享-->
+    <ImageView
+        android:id="@+id/fci_share"
+        android:layout_width="102px"
+        android:layout_height="102px"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fci_use2"
+        android:layout_marginRight="66px"
+        android:layout_marginTop="33px"
+        android:src="@mipmap/share_icon" />
+    <!--评论区-->
+    <ListView
+        android:id="@+id/fci_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fci_zan_click"
+        android:layout_marginLeft="48px"
+        android:layout_marginRight="48px"
+        android:layout_marginTop="18px"
+        android:background="@color/white"
+        android:divider="@null"
+        android:dividerHeight="7px"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/fci_comment_text"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_below="@id/fci_list"
+        android:layout_marginBottom="75px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="31px"
+        android:background="@drawable/comment_text_c"
+        android:gravity="center_vertical"
+        android:paddingLeft="40px"
+        android:text="说点儿什么吧..."
+        android:textColor="#A6B1CD"
+        android:textSize="42px" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15px"
+        android:layout_below="@id/fci_comment_text"
+        android:background="#E3ECEF" />
+</com.zhy.autolayout.AutoRelativeLayout>

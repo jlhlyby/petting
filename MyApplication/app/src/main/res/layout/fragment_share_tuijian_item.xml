@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        style="@style/text_sans_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48px"
+        android:layout_marginTop="27px"
+        android:text="推荐宠物"
+        android:textColor="@color/text_black_80"
+        android:textSize="48px" />
+    <!--换一批-->
+    <RelativeLayout
+        android:id="@+id/fsti_change_pets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="48px"
+        android:layout_marginTop="12px">
+
+        <TextView
+            android:id="@+id/fsti_use0"
+            style="@style/text_sans_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="换一批"
+            android:textColor="@color/text_black_50"
+            android:textSize="36px" />
+
+        <ImageView
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_toRightOf="@id/fsti_use0"
+            android:src="@mipmap/refresh" />
+
+    </RelativeLayout>
+
+    <com.petting.app.view.HorizontalListView
+        android:id="@+id/fsti_bom_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_marginTop="117px"
+        android:dividerHeight="30px"
+        android:scrollbars="none" />
+</com.zhy.autolayout.AutoRelativeLayout>

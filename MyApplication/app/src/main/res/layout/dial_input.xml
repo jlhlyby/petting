@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1080px"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="1020px"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="21px"
+        android:background="@drawable/comment_text_c">
+        <EditText
+            android:id="@+id/di_edt"
+            style="@style/text_sans_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15px"
+            android:layout_marginLeft="36px"
+            android:layout_marginTop="15px"
+            android:background="@null"
+            android:textColor="@color/text_black_80"
+            android:textSize="42px">
+            <requestFocus />
+
+        </EditText>
+    </RelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

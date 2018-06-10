@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mode"
+            type="com.petting.app.model.ShareNewsModel" />
+    </data>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/asn_pz_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1773px"
+            android:visibility="@{mode.isCameraMode ? View.VISIBLE : View.GONE}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="135px">
+
+                <ImageView
+                    android:id="@+id/asn_close"
+                    android:layout_width="90px"
+                    android:layout_height="90px"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="21px"
+                    android:src="@mipmap/close_black" />
+
+                <TextView
+                    style="@style/text_sans_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="拍照"
+                    android:textColor="@color/black"
+                    android:textSize="48px" />
+            </RelativeLayout>
+
+            <SurfaceView
+                android:id="@+id/asn_surfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="1080px"
+                android:layout_marginTop="135px"
+                android:visibility="@{mode.toShowSurfaceView ? View.VISIBLE : View.GONE}" />
+
+            <ImageView
+                android:id="@+id/asn_camera_ret"
+                android:layout_width="135px"
+                android:layout_height="135px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="215px"
+                android:layout_marginLeft="200px"
+                android:src="@drawable/camera_re_selector" />
+
+
+            <ImageView
+                android:id="@+id/asn_camera_clk"
+                android:layout_width="246px"
+                android:layout_height="246px"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="162px"
+                android:src="@drawable/camera_cut_selector" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="147px"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/asn_xc"
+                    style="@style/text_sans_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27px"
+                    android:text="相册"
+                    android:textColor="@{mode.isCameraMode?@color/text_grey_50:@color/text_black}"
+                    android:textSize="48px" />
+
+                <View
+                    android:id="@+id/asn_xc_tip"
+                    android:layout_width="80.6px"
+                    android:layout_height="12px"
+                    android:layout_below="@id/asn_xc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15px"
+                    android:background="@drawable/color_yellow_to_orange_camera"
+                    android:visibility="@{mode.isCameraMode ? View.GONE : View.VISIBLE}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/asn_pz"
+                    style="@style/text_sans_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27px"
+                    android:text="拍照"
+                    android:textColor="@{mode.isCameraMode?@color/text_black:@color/text_grey_50}"
+                    android:textSize="48px" />
+
+                <View
+                    android:id="@+id/asn_pz_tip"
+                    android:layout_width="80.6px"
+                    android:layout_height="12px"
+                    android:layout_below="@id/asn_pz"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15px"
+                    android:background="@drawable/color_yellow_to_orange_camera"
+                    android:visibility="@{mode.isCameraMode ? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--编辑照片-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="@{mode.toShowSurfaceView ? View.GONE : View.VISIBLE}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="135px">
+
+                <ImageView
+                    android:id="@+id/asn_close_edit"
+                    android:layout_width="90px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:src="@mipmap/turn_left" />
+
+                <TextView
+                    style="@style/text_sans_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="编辑图片"
+                    android:textColor="@color/black"
+                    android:textSize="48px" />
+
+                <TextView
+                    style="@style/text_sans_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:text="下一步"
+                    android:textColor="@color/text_orange"
+                    android:textSize="48px" />
+            </RelativeLayout>
+
+            <com.petting.app.view.BaseDragZoomImageView
+                android:id="@+id/asn_camera_pic_show"
+                android:layout_width="match_parent"
+                android:layout_height="1080px"
+                android:layout_marginTop="140px"
+                android:scaleType="matrix" />
+
+            <ImageView
+                android:id="@+id/asn_full_screen"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="1000px"
+                android:src="@mipmap/full_screen" />
+
+            <ImageView
+                android:id="@+id/asn_light"
+                android:layout_width="120px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="1000px"
+                android:src="@mipmap/light_change" />
+
+
+        </RelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</layout>

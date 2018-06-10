@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/fc_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E3ECEF"
+        android:divider="@null"
+        android:dividerHeight="0px"
+        android:scrollbars="none" />
+
+
+</com.zhy.autolayout.AutoRelativeLayout>
