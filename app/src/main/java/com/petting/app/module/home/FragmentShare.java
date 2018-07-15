@@ -1,4 +1,4 @@
-package com.petting.app.fragment;
+package com.petting.app.module.home;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.petting.app.R;
+import com.petting.app.base.BaseFragment;
 import com.petting.app.view.HorizontalListView;
 
 /**
@@ -28,8 +28,7 @@ public class FragmentShare extends BaseFragment implements AbsListView.OnScrollL
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_share, null);
-            listViewUp = (PullToRefreshListView) view.findViewById(R.id.fs_list);
-            listViewUp.setAdapter(new ShareTipAdapter());
+            initView(view);
         }
         return view;
     }
@@ -41,6 +40,17 @@ public class FragmentShare extends BaseFragment implements AbsListView.OnScrollL
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+    }
+
+    @Override
+    protected void initView(View root) {
+        listViewUp = (PullToRefreshListView) view.findViewById(R.id.fs_list);
+        listViewUp.setAdapter(new ShareTipAdapter());
+    }
+
+    @Override
+    protected void initClick() {
 
     }
 

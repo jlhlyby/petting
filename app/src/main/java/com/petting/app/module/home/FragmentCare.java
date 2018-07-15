@@ -1,8 +1,7 @@
-package com.petting.app.fragment;
+package com.petting.app.module.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.petting.app.R;
 import com.petting.app.activity.ImagePagerActivity;
+import com.petting.app.base.BaseFragment;
 import com.petting.app.tools.HoldView;
 import com.petting.app.tools.Tools;
 import com.petting.app.view.CircularImage;
@@ -35,19 +34,9 @@ public class FragmentCare extends BaseFragment implements AbsListView.OnScrollLi
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = View.inflate(getActivity(), R.layout.fragment_care, null);
-            listview = (PullToRefreshListView) view.findViewById(R.id.fc_list);
-            listview.setAdapter(new CationListAdapter());
-            listview.setOnScrollListener(this);
-//            listview.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
-//                @Override
-//                public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-//                    SystemClock.sleep(2000);
-//                    listview.onRefreshComplete();
-//                }
-//            });
-        }
+        view = View.inflate(getActivity(), R.layout.fragment_care, null);
+        initView(view);
+        initClick();
         return view;
     }
 
@@ -84,6 +73,17 @@ public class FragmentCare extends BaseFragment implements AbsListView.OnScrollLi
                 mThreadGetInfo.start();
             }
         }
+    }
+
+    @Override
+    protected void initView(View root) {
+        listview = (PullToRefreshListView) root.findViewById(R.id.fc_list);
+        listview.setAdapter(new CationListAdapter());
+    }
+
+    @Override
+    protected void initClick() {
+        listview.setOnScrollListener(this);
     }
 
     class CationListAdapter extends BaseAdapter {
@@ -159,7 +159,7 @@ public class FragmentCare extends BaseFragment implements AbsListView.OnScrollLi
             holdView.mTextView10.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Tools.showInputDial(getActivity(),"");
+                    Tools.showInputDial(getActivity(), "");
                 }
             });
             // startActivity(new Intent(getActivity(), CareDetailActivity.class));

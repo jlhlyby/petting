@@ -12,10 +12,10 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.petting.app.R;
-import com.petting.app.fragment.FragmentFind;
-import com.petting.app.fragment.FragmentHome;
-import com.petting.app.fragment.FragmentMine;
-import com.petting.app.fragment.FragmentTip;
+import com.petting.app.module.find.FragmentFind;
+import com.petting.app.module.home.FragmentHome;
+import com.petting.app.module.mine.FragmentMine;
+import com.petting.app.module.tip.FragmentTip;
 import com.petting.app.tools.MyApplication;
 
 public class MainActivity extends FragmentActivity  {
