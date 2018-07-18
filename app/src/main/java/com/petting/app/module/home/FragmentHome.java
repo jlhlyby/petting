@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.petting.app.R;
 import com.petting.app.base.BaseFragment;
+import com.petting.app.module.home.care.FragmentCare;
+import com.petting.app.module.home.share.FragmentShare;
 
 import java.util.ArrayList;
 

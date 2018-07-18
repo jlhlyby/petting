@@ -43,7 +43,7 @@
             android:name="com.amap.api.v2.apikey"
             android:value="ffd3dc1a5a9fcb2423fb9d9009e357bb" />
 
-        <activity android:name=".activity.MainActivity"
+        <activity android:name=".MainActivity"
             android:windowSoftInputMode="adjustNothing"
             >
             <intent-filter>
@@ -52,9 +52,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ShareNewsActivity" />
-        <activity android:name=".activity.ImagePagerActivity" />
-        <activity android:name=".activity.CareDetailActivity" />
+        <activity android:name=".module.home.share.ShareNewsActivity" />
+        <activity android:name=".module.home.care.ImagePagerActivity" />
+        <activity android:name=".module.home.care.CareDetailActivity" />
 
         <service android:name="com.amap.api.location.APSService" />
     </application>

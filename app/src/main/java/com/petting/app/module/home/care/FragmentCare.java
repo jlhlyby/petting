@@ -1,4 +1,4 @@
-package com.petting.app.module.home;
+package com.petting.app.module.home.care;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.petting.app.R;
-import com.petting.app.activity.ImagePagerActivity;
 import com.petting.app.base.BaseFragment;
 import com.petting.app.tools.HoldView;
 import com.petting.app.tools.Tools;

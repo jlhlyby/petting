@@ -1,4 +1,4 @@
-package com.petting.app.activity;
+package com.petting.app.module.home.care;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.petting.app.fragment;
+package com.petting.app.module.home.care;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

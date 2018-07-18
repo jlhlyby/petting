@@ -1,4 +1,4 @@
-package com.petting.app.module.home;
+package com.petting.app.module.home.share;
 
 import android.annotation.TargetApi;
 import android.os.Build;

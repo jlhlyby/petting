@@ -1,4 +1,4 @@
-package com.petting.app.activity;
+package com.petting.app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import com.petting.app.R;
 import com.petting.app.module.find.FragmentFind;
 import com.petting.app.module.home.FragmentHome;
+import com.petting.app.module.home.share.ShareNewsActivity;
 import com.petting.app.module.mine.FragmentMine;
 import com.petting.app.module.tip.FragmentTip;
 import com.petting.app.tools.MyApplication;

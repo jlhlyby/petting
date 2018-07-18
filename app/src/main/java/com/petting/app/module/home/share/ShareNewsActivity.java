@@ -1,4 +1,4 @@
-package com.petting.app.activity;
+package com.petting.app.module.home.share;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;

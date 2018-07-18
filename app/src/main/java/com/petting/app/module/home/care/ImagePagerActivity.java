@@ -1,4 +1,4 @@
-package com.petting.app.activity;
+package com.petting.app.module.home.care;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
 import com.petting.app.R;
-import com.petting.app.fragment.ImageDetailFragment;
 import com.petting.app.tools.HackyViewPager;
 
 import java.util.ArrayList;

@@ -7,6 +7,7 @@ import android.os.Environment;
  * Created by HUASHAN on 2017/11/25.
  */
 public class Contents {
+    public static final String IP = "http://47.98.139.72/";
     /**
      * 对话框
      */
