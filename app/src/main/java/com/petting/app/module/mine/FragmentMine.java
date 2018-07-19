@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.petting.app.R;
-import com.petting.app.net.pojo.response.LoginResp;
 import com.petting.app.net.NetHelper;
+import com.petting.app.net.pojo.response.CaptchaRespData;
+import com.petting.app.net.pojo.response.NetBaseResp;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,16 +29,14 @@ public class FragmentMine extends Fragment {
         view.findViewById(R.id.f_text).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo 发送登录请求
-                NetHelper.getCode(new Callback<LoginResp>() {
+                NetHelper.getCode(new Callback<NetBaseResp<CaptchaRespData>>() {
                     @Override
-                    public void onResponse(Call<LoginResp> call, Response<LoginResp> response) {
-
-                        Log.i(TAG, "onResponse: "+response.body());
+                    public void onResponse(Call<NetBaseResp<CaptchaRespData>> call, Response<NetBaseResp<CaptchaRespData>> response) {
+                        Log.i(TAG, "onResponse: "+response.body().toString());
                     }
 
                     @Override
-                    public void onFailure(Call<LoginResp> call, Throwable t) {
+                    public void onFailure(Call<NetBaseResp<CaptchaRespData>> call, Throwable t) {
                         Log.i(TAG, "onFailure: "+t);
                     }
                 });

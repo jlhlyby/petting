@@ -1,8 +1,9 @@
 package com.petting.app.net;
 
 import com.petting.app.net.api.LoginApi;
-import com.petting.app.net.pojo.request.LoginReq;
-import com.petting.app.net.pojo.response.LoginResp;
+import com.petting.app.net.pojo.request.CaptchaReq;
+import com.petting.app.net.pojo.response.CaptchaRespData;
+import com.petting.app.net.pojo.response.NetBaseResp;
 import com.petting.app.tools.Contents;
 
 import retrofit2.Callback;
@@ -25,8 +26,8 @@ public class NetHelper {
 
         return sRetrofit;
     }
-    public static void getCode(Callback<LoginResp> callBack){
-        LoginReq req = new LoginReq();
+    public static void getCode(Callback<NetBaseResp<CaptchaRespData>> callBack){
+        CaptchaReq req = new CaptchaReq();
         req.setPhone("13766858497");
         getServer(LoginApi.class).getCode(req).enqueue(callBack);
     }

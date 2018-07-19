@@ -6,25 +6,17 @@ import java.io.Serializable;
  * Created by yuboyang on 18/7/16.
  */
 
-public class NetBaseResp implements Serializable {
-    int status;
-    String message;
+public class NetBaseResp<T> implements Serializable {
+    public int status;
+    public String message;
+    public T data;
 
-    public int getStatus() {
-        return status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public NetBaseResp setStatus(int status) {
-        this.status = status;
-        return this;
-    }
-
-    public NetBaseResp setMessage(String message) {
-        this.message = message;
-        return this;
+    @Override
+    public String toString() {
+        return "NetBaseResp{" +
+                "status=" + status +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
     }
 }
