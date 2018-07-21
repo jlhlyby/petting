@@ -13,6 +13,9 @@
     <color name="text_black_80">#80000000</color>
     <color name="text_black_50">#50000000</color>
     <color name="text_black_30">#30000000</color>
+    <color name="text_light_grey">#b2b2b2</color>
+    <color name="text_grey">#333333</color>
     <color name="text_orange">#FF9401</color>
+    <color name="line_orange">#FF9401</color>
     <color name="textview_bac_grey">#20D6D6D6</color>
 </resources>

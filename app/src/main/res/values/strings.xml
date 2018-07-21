@@ -2,4 +2,7 @@
     <string name="app_name">测试</string>
     <string name="viewpager_indicator">%1$d/%2$d</string>
     <string name="back">返回</string>
+    <string name="login_input_phone_hint">请输入手机号</string>
+    <string name="login_phone_title">输入您的手机号，开启萌宠生活</string>
+    <string name="login_str_next_btn">下一步</string>
 </resources>

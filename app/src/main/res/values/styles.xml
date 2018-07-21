@@ -27,6 +27,42 @@
         <item name="android:layout_height">3px</item>
         <item name="android:background">#10000000</item>
     </style>
+    <!-- 输入框样式 -->
+    <style name="PetEditStyle">
+        <item name="android:background">@drawable/pet_shape_edit_bg</item>
+        <item name="android:textColorHint">@color/text_black_30</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textCursorDrawable">@drawable/pet_shape_edit_cursor</item>
+    </style>
+    <style name="PetButtonSyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/pet_selector_btn</item>
+    </style>
+    <!-- 账号中浅灰标题样式 -->
+    <style name="PetLoginLGTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_light_grey</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+    <!-- 账号中黑色标题样式 -->
+    <style name="PetLoginBTextStyle" parent="PetLoginLGTextStyle">
+        <item name="android:textColor">@color/text_grey</item>
+    </style>
+    <!-- 账号中灰色标题样式 -->
+    <style name="PetLoginGTextStyle" parent="PetLoginLGTextStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="text_roboto_regular">
         <item name="android:fontFamily">sans-serif</item>
     </style>
