@@ -21,11 +21,16 @@ public abstract class AbsBaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(getLayoutRes(), container, false);
+        view = getRootView(inflater,container);
         initView(view);
         initClick();
         return view;
     }
+    protected View getRootView(LayoutInflater inflater, @Nullable ViewGroup container){
+        view = inflater.inflate(getLayoutRes(), container, false);
+        return view;
+    }
+
 
     @Override
     public void onDestroyView() {

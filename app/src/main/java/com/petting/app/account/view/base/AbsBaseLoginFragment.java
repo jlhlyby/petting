@@ -2,7 +2,12 @@ package com.petting.app.account.view.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ScrollView;
 
+import com.petting.app.R;
 import com.petting.app.account.model.LoginFragmentMessenger;
 import com.petting.app.base.AbsBaseFragment;
 import com.petting.app.tools.Contents;
@@ -12,12 +17,21 @@ import com.petting.app.tools.Contents;
  */
 
 public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
+    /**
+     * fragment直接数据传输
+     */
     protected LoginFragmentMessenger messenger;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initMessenger();
+    }
+    @Override
+    protected View getRootView(LayoutInflater inflater, @Nullable ViewGroup container) {
+        view = inflater.inflate(R.layout.fragment_login_base, container, false);
+        inflater.inflate(getLayoutRes(), (ScrollView) view.findViewById(R.id.sv_content), true);
+        return view;
     }
 
     public LoginFragmentMessenger getMessenger() {
