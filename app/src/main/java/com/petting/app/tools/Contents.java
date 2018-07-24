@@ -9,6 +9,10 @@ import android.os.Environment;
 public class Contents {
     public static final String IP = "http://47.98.139.72/";
     /**
+     * fragment之间数据传输
+     */
+    public static final String KEY_FRAGMENT_MESSENGER = "key_fragment_messenger";
+    /**
      * 对话框
      */
     public static Dialog mDialog;

@@ -2,9 +2,6 @@ package com.petting.app.module.home.share;
 
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -12,7 +9,7 @@ import android.widget.BaseAdapter;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.petting.app.R;
-import com.petting.app.base.BaseFragment;
+import com.petting.app.base.AbsBaseFragment;
 import com.petting.app.view.HorizontalListView;
 
 /**
@@ -20,17 +17,11 @@ import com.petting.app.view.HorizontalListView;
  * HOME-推荐
  */
 
-public class FragmentShare extends BaseFragment implements AbsListView.OnScrollListener{
+public class FragmentShare extends AbsBaseFragment implements AbsListView.OnScrollListener{
     private PullToRefreshListView listViewUp;//上部列表
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = inflater.inflate(R.layout.fragment_share, null);
-            initView(view);
-        }
-        return view;
+    protected int getLayoutRes() {
+        return R.layout.fragment_share;
     }
 
     @Override

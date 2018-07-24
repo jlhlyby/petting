@@ -8,7 +8,7 @@
     tools:context="com.petting.app.account.view.LoginActivity">
 
     <TextView
-        android:id="@+id/button"
+        android:id="@+id/tv_next"
         style="@style/PetButtonSyle"
         android:layout_marginTop="30dp"
         android:text="@string/login_str_next_btn"

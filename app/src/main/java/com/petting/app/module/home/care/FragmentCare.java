@@ -1,9 +1,6 @@
 package com.petting.app.module.home.care;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -14,7 +11,7 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.petting.app.R;
-import com.petting.app.base.BaseFragment;
+import com.petting.app.base.AbsBaseFragment;
 import com.petting.app.tools.HoldView;
 import com.petting.app.tools.Tools;
 import com.petting.app.view.CircularImage;
@@ -26,17 +23,12 @@ import java.util.ArrayList;
  * HOME-关注
  */
 
-public class FragmentCare extends BaseFragment implements AbsListView.OnScrollListener {
+public class FragmentCare extends AbsBaseFragment implements AbsListView.OnScrollListener {
     private PullToRefreshListView listview;
     private Thread mThreadGetInfo;//获取数据线程
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = View.inflate(getActivity(), R.layout.fragment_care, null);
-        initView(view);
-        initClick();
-        return view;
+    protected int getLayoutRes() {
+        return R.layout.fragment_care;
     }
 
     @Override

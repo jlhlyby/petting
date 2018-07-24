@@ -1,18 +1,14 @@
 package com.petting.app.module.home;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.petting.app.R;
-import com.petting.app.base.BaseFragment;
+import com.petting.app.base.AbsBaseFragment;
 import com.petting.app.module.home.care.FragmentCare;
 import com.petting.app.module.home.share.FragmentShare;
 
@@ -22,7 +18,7 @@ import java.util.ArrayList;
  * Created by JiangXiongPing on 2017/11/14.
  */
 
-public class FragmentHome extends BaseFragment {
+public class FragmentHome extends AbsBaseFragment {
     ViewPager viewPager;
     TextView cationTv;//关注
     TextView barCation;//关注下方横线
@@ -31,19 +27,13 @@ public class FragmentHome extends BaseFragment {
     private ArrayList<Fragment> fragmentList;
     private ViewPagerAdapter mViewPagerAdapter;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = View.inflate(getActivity(), R.layout.fragment_home, null);
-            initView(view);
-            initClick();
-        }
-        return view;
+    protected int getLayoutRes() {
+        return R.layout.fragment_home;
     }
 
     @Override
-    protected void initView(View root) {
+    protected void  initView(View root) {
         viewPager = (ViewPager) view.findViewById(R.id.fh_vp);
         barCation = (TextView) view.findViewById(R.id.fh_cation);
         barShare = (TextView) view.findViewById(R.id.fh_share);
