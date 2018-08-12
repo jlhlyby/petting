@@ -2,6 +2,7 @@ package com.petting.app.net;
 
 import com.petting.app.net.api.LoginApi;
 import com.petting.app.net.pojo.request.CaptchaReq;
+import com.petting.app.net.pojo.request.CheckReq;
 import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
 import com.petting.app.tools.Contents;
@@ -25,10 +26,12 @@ public class NetHelper {
 
         return sRetrofit;
     }
-    public static void getCode(NetCallBack<NetBaseResp<CaptchaRespData>> callBack){
-        CaptchaReq req = new CaptchaReq();
-        req.setPhone("13766858497");
+    public static void getCode(CaptchaReq req,NetCallBack<NetBaseResp<CaptchaRespData>> callBack){
         getServer(LoginApi.class).getCode(req).enqueue(callBack);
+    }
+    public static void check(CheckReq req,NetCallBack<NetBaseResp<CheckReq>> callBack) {
+        getServer(LoginApi.class).check(req).enqueue(callBack);
+
     }
     private static  <T> T getServer(Class<T> tClass){
         return getRetrofit().create(tClass);

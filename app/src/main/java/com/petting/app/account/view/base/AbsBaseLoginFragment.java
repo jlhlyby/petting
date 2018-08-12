@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.petting.app.R;
 import com.petting.app.account.model.LoginFragmentMessenger;
@@ -60,6 +61,18 @@ public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
             messenger = new LoginFragmentMessenger();
         }
     }
+    protected void showShortToast(String msg){
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
+    }
+    protected void showLongToast(String msg){
+        Toast.makeText(getContext(),msg,Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * 跳转
+     * @param from
+     * @param toFragment
+     */
     public void transform(AbsBaseLoginFragment from,AbsBaseLoginFragment toFragment){
        mActivity.transform(from,toFragment);
     }

@@ -6,12 +6,13 @@
               android:gravity="center"
               android:orientation="horizontal">
     <com.petting.app.view.CodeInputEditText
+        style="@style/PetEditStyle"
+        android:paddingBottom="2dp"
         android:id="@+id/v_input_edit"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-
         android:gravity="center"
         android:imeOptions="flagNoExtractUi"
         android:singleLine="true"

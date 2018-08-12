@@ -69,13 +69,13 @@ public class CodeInputView extends LinearLayout {
     private void initView(Context context, AttributeSet attrs) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.view_code_input, this);
         LinearLayout ll_code_layout = (LinearLayout) view.findViewById(R.id.ll_code_layout);
-        int width = (int) (DisplayMetrics.getWidth(context) - 40 * DisplayMetrics.getDensity(context));   //计算
-        int boxw = width / 7;
-        Logger.i("CodeInputView"," width:" + width);
-        Logger.i("CodeInputView"," boxw :" + boxw);
-        Logger.i("CodeInputView"," margin:" + boxw / 5);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MyCoedEdit);
         editNum = ta.getInt(R.styleable.MyCoedEdit_CodeLength, DEFAULT_CODE_LENGTH);
+        int width = (int) (DisplayMetrics.getWidth(context) - 76 * DisplayMetrics.getDensity(context));   //计算
+        int boxw = width / (editNum+1);
+        Logger.i("CodeInputView"," width:" + width);
+        Logger.i("CodeInputView"," boxw :" + boxw);
+        Logger.i("CodeInputView"," margin:" + boxw / (editNum-1));
         ta.recycle();
         codes = new ArrayList<>();
         for (int i = 0; i < editNum; i++) {
@@ -89,7 +89,7 @@ public class CodeInputView extends LinearLayout {
             if (i == editNum - 1) {
                 params.setMargins(0, 0, 0, 0);
             } else {
-                params.setMargins(0, 0, boxw / 5, 0);
+                params.setMargins(0, 0, boxw / (editNum-1), 0);
             }
             smallEdit.setVisibility(View.VISIBLE);
             codes.add(smallEdit);

@@ -20,6 +20,12 @@ public class Contents {
      * 照片缓存路径
      */
     public static final String CAMERA_PATH=Environment.getExternalStorageDirectory().toString()+"/petting/camera/";
-
+    /**
+     * 网络ok
+     */
     public static final int NET_STATUS_OK = 0;
+    /**
+     * 验证码错误
+     */
+    public static final int NET_STATUS_CODE_ERROR = 2;
 }

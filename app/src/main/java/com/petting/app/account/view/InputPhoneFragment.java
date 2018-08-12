@@ -10,6 +10,7 @@ import com.petting.app.R;
 import com.petting.app.account.view.base.AbsBaseLoginFragment;
 import com.petting.app.net.NetCallBack;
 import com.petting.app.net.NetHelper;
+import com.petting.app.net.pojo.request.CaptchaReq;
 import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
 import com.petting.app.tools.Contents;
@@ -22,6 +23,7 @@ import com.petting.app.tools.simplifycode.PetTextWatcher;
 public class InputPhoneFragment extends AbsBaseLoginFragment {
     private EditText phoneEt;
     private TextView nextTv;
+
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_input_phone;
@@ -50,19 +52,20 @@ public class InputPhoneFragment extends AbsBaseLoginFragment {
         nextTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NetHelper.getCode(new NetCallBack<NetBaseResp<CaptchaRespData>>(getContext()) {
-                    @Override
-                    public boolean onResponse(NetBaseResp<CaptchaRespData> resp) {
-                        switch (resp.status){
-                            case Contents.NET_STATUS_OK:
-                                messenger.setSessionId(resp.data.getSessionId());
-                                transform(InputPhoneFragment.this,new VerifyCodeFragment());
-                                return true;
-                        }
-                        return false;
-                    }
-
-                });
+                messenger.setPhone(phoneEt.getText().toString());
+                NetHelper.getCode(new CaptchaReq().setPhone(messenger.getPhone())
+                        , new NetCallBack<NetBaseResp<CaptchaRespData>>(getContext()) {
+                            @Override
+                            public boolean onResponse(NetBaseResp<CaptchaRespData> resp) {
+                                switch (resp.status) {
+                                    case Contents.NET_STATUS_OK:
+                                        messenger.setSessionId(resp.data.getSessionId());
+                                        transform(InputPhoneFragment.this, new VerifyCodeFragment());
+                                        return true;
+                                }
+                                return false;
+                            }
+                        });
             }
         });
     }
