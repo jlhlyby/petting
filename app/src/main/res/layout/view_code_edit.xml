@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_code_layout"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="horizontal">
+    <com.petting.app.view.CodeInputEditText
+        android:id="@+id/v_input_edit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+
+        android:gravity="center"
+        android:imeOptions="flagNoExtractUi"
+        android:singleLine="true"
+        android:textSize="26dp"/>
+    <!--android:textColor="@color/login_unify_color_code_edit"-->
+    <!--android:textCursorDrawable="?attr/login_unify_edit_text_cursor"-->
+    <!--android:background="?attr/login_unify_code_edit_bg"-->
+
+</LinearLayout>
+

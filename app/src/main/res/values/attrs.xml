@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CodeInputView">
+        <attr name = "android:inputType" />
+    </declare-styleable>
+    <declare-styleable name="MyCoedEdit">
+        <attr name="CodeLength" format="integer"/>
+    </declare-styleable>
+</resources>

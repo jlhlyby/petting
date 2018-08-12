@@ -5,5 +5,10 @@ package com.petting.app.net.pojo.response;
  */
 
 public class CaptchaRespData extends NetBaseData{
-    String sessionId;
+    private String sessionId;
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
 }

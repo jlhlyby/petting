@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.petting.app.R;
@@ -33,6 +34,12 @@ public class BaseFragmentActivity extends FragmentActivity {
             }
             toFragment.setArguments(bundle);
             transaction.replace(R.id.fl_fragment, toFragment, toFragment.getClass().getName());
+            if (fromFragment != null){     //如果fromState == null,表示流程从新开始
+                transaction.addToBackStack(null);
+            }else{
+                getSupportFragmentManager()
+                        .popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE); //进入首页清除所有回退栈
+            }
             transaction.commitAllowingStateLoss();
         } catch (Exception e) {
             e.printStackTrace();

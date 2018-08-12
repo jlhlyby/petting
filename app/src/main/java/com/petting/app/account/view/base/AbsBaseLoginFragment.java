@@ -9,6 +9,7 @@ import android.widget.ScrollView;
 
 import com.petting.app.R;
 import com.petting.app.account.model.LoginFragmentMessenger;
+import com.petting.app.account.view.LoginActivity;
 import com.petting.app.base.AbsBaseFragment;
 import com.petting.app.tools.Contents;
 
@@ -17,6 +18,7 @@ import com.petting.app.tools.Contents;
  */
 
 public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
+    LoginActivity mActivity;
     /**
      * fragment直接数据传输
      */
@@ -25,6 +27,7 @@ public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mActivity = (LoginActivity) getActivity();
         initMessenger();
     }
     @Override
@@ -56,6 +59,8 @@ public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
         if (messenger == null) {
             messenger = new LoginFragmentMessenger();
         }
-
+    }
+    public void transform(AbsBaseLoginFragment from,AbsBaseLoginFragment toFragment){
+       mActivity.transform(from,toFragment);
     }
 }

@@ -8,15 +8,13 @@ import android.widget.TextView;
 
 import com.petting.app.R;
 import com.petting.app.account.view.base.AbsBaseLoginFragment;
+import com.petting.app.net.NetCallBack;
 import com.petting.app.net.NetHelper;
 import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
+import com.petting.app.tools.Contents;
 import com.petting.app.tools.Tools;
 import com.petting.app.tools.simplifycode.PetTextWatcher;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * 输入手机号页面
@@ -52,16 +50,18 @@ public class InputPhoneFragment extends AbsBaseLoginFragment {
         nextTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NetHelper.getCode(new Callback<NetBaseResp<CaptchaRespData>>() {
+                NetHelper.getCode(new NetCallBack<NetBaseResp<CaptchaRespData>>(getContext()) {
                     @Override
-                    public void onResponse(Call<NetBaseResp<CaptchaRespData>> call, Response<NetBaseResp<CaptchaRespData>> response) {
-                        LogI("onResponse: "+response.body().toString());
+                    public boolean onResponse(NetBaseResp<CaptchaRespData> resp) {
+                        switch (resp.status){
+                            case Contents.NET_STATUS_OK:
+                                messenger.setSessionId(resp.data.getSessionId());
+                                transform(InputPhoneFragment.this,new VerifyCodeFragment());
+                                return true;
+                        }
+                        return false;
                     }
 
-                    @Override
-                    public void onFailure(Call<NetBaseResp<CaptchaRespData>> call, Throwable t) {
-                        LogI("onFailure: "+t);
-                    }
                 });
             }
         });

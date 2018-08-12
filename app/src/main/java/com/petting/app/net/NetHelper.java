@@ -6,7 +6,6 @@ import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
 import com.petting.app.tools.Contents;
 
-import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -26,7 +25,7 @@ public class NetHelper {
 
         return sRetrofit;
     }
-    public static void getCode(Callback<NetBaseResp<CaptchaRespData>> callBack){
+    public static void getCode(NetCallBack<NetBaseResp<CaptchaRespData>> callBack){
         CaptchaReq req = new CaptchaReq();
         req.setPhone("13766858497");
         getServer(LoginApi.class).getCode(req).enqueue(callBack);
