@@ -56,11 +56,11 @@
     </style>
     <!-- 账号中黑色标题样式 -->
     <style name="PetLoginBTextStyle" parent="PetLoginLGTextStyle">
-        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <!-- 账号中灰色标题样式 -->
     <style name="PetLoginGTextStyle" parent="PetLoginLGTextStyle">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/text_grey</item>
     </style>
 
     <style name="text_roboto_regular">

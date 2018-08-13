@@ -46,8 +46,7 @@ public class VerifyCodeFragment extends AbsBaseLoginFragment {
                     public boolean onResponse(NetBaseResp<CheckReq> resp) {
                         switch (resp.status){
                             case Contents.NET_STATUS_OK:
-                                //todo跳转设置密码页面
-                                showShortToast("验证成功");
+                                transform(VerifyCodeFragment.this,new SetPwdFragment());
                                 return true;
                         }
                         return false;

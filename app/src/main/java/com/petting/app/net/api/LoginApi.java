@@ -3,6 +3,7 @@ package com.petting.app.net.api;
 
 import com.petting.app.net.pojo.request.CaptchaReq;
 import com.petting.app.net.pojo.request.CheckReq;
+import com.petting.app.net.pojo.request.PassReq;
 import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.CheckRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
@@ -39,5 +40,5 @@ public interface LoginApi {
      * @return
      */
     @POST("/user/pass")
-    Call<NetBaseResp<PassRespData>> pass(@Body CheckReq req);
+    Call<NetBaseResp<PassRespData>> pass(@Body PassReq req);
 }
