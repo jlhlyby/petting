@@ -19,7 +19,7 @@ import com.petting.app.tools.Contents;
  */
 
 public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
-    LoginActivity mActivity;
+    protected LoginActivity mActivity;
     /**
      * fragment直接数据传输
      */
@@ -66,6 +66,12 @@ public abstract class AbsBaseLoginFragment extends AbsBaseFragment {
     }
     protected void showLongToast(String msg){
         Toast.makeText(getContext(),msg,Toast.LENGTH_LONG).show();
+    }
+    protected void showShortToast(int resId){
+        Toast.makeText(getContext(),getText(resId),Toast.LENGTH_SHORT).show();
+    }
+    protected void showLongToast(int resId){
+        Toast.makeText(getContext(),getText(resId),Toast.LENGTH_LONG).show();
     }
 
     /**

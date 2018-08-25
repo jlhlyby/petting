@@ -1,29 +1,27 @@
 package com.petting.app.tools;
 
 import android.app.Application;
-import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 
-import com.lidroid.xutils.BitmapUtils;
-
-import java.lang.reflect.Field;
+import com.petting.app.store.BaseStore;
 
 /**
  * Created by JiangXiongPing on 2017/11/16.
  */
 
 public class MyApplication extends Application {
-    private static MyApplication instance;
     private int mScreenWidth;// 屏幕宽度
     private int mScreenHeight;//屏幕高度
-
+    private static MyApplication application;
     @Override
     public void onCreate() {
         super.onCreate();
+        application = this;
+        BaseStore.init(this);
         //获取屏幕分辨率
         DisplayMetrics dm = getResources().getDisplayMetrics();
-        getInstance().setmScreenWidth(dm.widthPixels);
-        getInstance().setmScreenHeight(dm.heightPixels);
+        setmScreenWidth(dm.widthPixels);
+        setmScreenHeight(dm.heightPixels);
         //设置全局字体
 //        Typeface mTypeface = Typeface.createFromAsset(getAssets(), "fonts/NotoSansJP-Medium.otf");
 //
@@ -38,11 +36,8 @@ public class MyApplication extends Application {
 //        }
     }
 
-    public synchronized static MyApplication getInstance() {
-        if (null == instance) {
-            instance = new MyApplication();
-        }
-        return instance;
+    public synchronized static MyApplication getApplication() {
+        return application;
     }
 
     public int getmScreenWidth() {

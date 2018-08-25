@@ -24,7 +24,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_code_hint"
         style="@style/PetLoginGTextStyle"
         android:layout_marginTop="40dp"
         android:text="@string/login_set_pwd_title"
@@ -43,7 +43,7 @@
         android:inputType="phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_code_hint"/>
     <TextView
         android:id="@+id/tv_tip1"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pwd"/>
     <ImageView
-        android:id="@+id/iv_mix"
+        android:id="@+id/iv_valid"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginRight="38dp"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toEndOf="@+id/tv_tip2"
         app:layout_constraintTop_toTopOf="@+id/tv_tip2"/>
     <ImageView
-        android:id="@+id/iv_valid"
+        android:id="@+id/iv_mix"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginRight="38dp"

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.petting.app.account.LoginHelper;
 import com.petting.app.module.find.FragmentFind;
 import com.petting.app.module.home.FragmentHome;
 import com.petting.app.module.home.share.ShareNewsActivity;
@@ -45,6 +46,16 @@ public class MainActivity extends FragmentActivity  {
                 startActivity(new Intent(MainActivity.this, ShareNewsActivity.class));
             }
         });
+        fragmentTabHost.getTabWidget().getChildAt(4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (LoginHelper.isLoginNow()){
+                    fragmentTabHost.onTabChanged(texts[4]);
+                }else{
+                    LoginHelper.startLogin(getApplicationContext());
+                }
+            }
+        });
     }
 
     private View getView(int i) {
@@ -55,8 +66,8 @@ public class MainActivity extends FragmentActivity  {
         if (i == 2) {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(imageView.getLayoutParams());
             params.gravity = Gravity.CENTER_HORIZONTAL;
-            params.width = (int) (147 * (MyApplication.getInstance().getmScreenWidth() / 1080.00));//cation
-            params.height = (int) (147 * (MyApplication.getInstance().getmScreenHeight() / 1920.00));//cation
+            params.width = (int) (147 * (MyApplication.getApplication().getmScreenWidth() / 1080.00));//cation
+            params.height = (int) (147 * (MyApplication.getApplication().getmScreenHeight() / 1920.00));//cation
             imageView.setLayoutParams(params);
         }
         textView.setText(texts[i]);

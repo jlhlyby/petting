@@ -9,11 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.petting.app.R;
+import com.petting.app.account.store.LoginStore;
 import com.petting.app.account.view.base.AbsBaseLoginFragment;
 import com.petting.app.net.NetCallBack;
 import com.petting.app.net.NetHelper;
 import com.petting.app.net.pojo.request.PassReq;
 import com.petting.app.net.pojo.response.NetBaseResp;
+import com.petting.app.net.pojo.response.PassRespData;
+import com.petting.app.tools.Contents;
 import com.petting.app.tools.Tools;
 import com.petting.app.tools.simplifycode.PetTextWatcher;
 
@@ -60,34 +63,43 @@ public class SetPwdFragment extends AbsBaseLoginFragment {
     }
 
     private void setPwd(String pwd) {
-        if (TextUtils.isEmpty(pwd)){
+        if (TextUtils.isEmpty(pwd)) {
             return;
         }
         NetHelper.pass(new PassReq()
-                .setPassword(pwd)
-                .setPhone(messenger.getPhone())
-                .setSessionId(messenger.getSessionId())
-                , new NetCallBack<NetBaseResp<PassReq>>(getContext()) {
-            @Override
-            public boolean onResponse(NetBaseResp<PassReq> resp) {
-                //todo 处理请求
-                return false;
-            }
-        });
+                        .setPassword(pwd)
+                        .setPhone(messenger.getPhone())
+                        .setSessionId(messenger.getSessionId())
+                , new NetCallBack<NetBaseResp<PassRespData>>(getContext()) {
+                    @Override
+                    public boolean onResponse(NetBaseResp<PassRespData> resp) {
+                        switch (resp.status) {
+                            case Contents.NET_STATUS_OK:
+                                showShortToast(R.string.login_success);
+                                LoginStore.getIns().saveToken(resp.data.token);
+                                mActivity.finish();
+                                return true;
+                            default:
+                                return false;
+
+                        }
+                    }
+                });
     }
-    private boolean checkPwd(String pwd){
-        boolean isValid =false;  //判断密码长度限制
+
+    private boolean checkPwd(String pwd) {
+        boolean isValid = false;  //判断密码长度限制
         boolean isMix = false;     //判断密码是否混合两种字符类型
-        if (Tools.isValidPwd(pwd)){
-            isValid =true;
+        if (Tools.isValidPwd(pwd)) {
+            isValid = true;
             validIv.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             validIv.setVisibility(View.INVISIBLE);
         }
-        if (Tools.chackPasswordMix(pwd)){
+        if (Tools.chackPasswordMix(pwd)) {
             isMix = true;
             mixIv.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             mixIv.setVisibility(View.INVISIBLE);
         }
         return isMix & isValid;

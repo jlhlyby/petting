@@ -6,6 +6,7 @@ import com.petting.app.net.pojo.request.CheckReq;
 import com.petting.app.net.pojo.request.PassReq;
 import com.petting.app.net.pojo.response.CaptchaRespData;
 import com.petting.app.net.pojo.response.NetBaseResp;
+import com.petting.app.net.pojo.response.PassRespData;
 import com.petting.app.tools.Contents;
 
 import retrofit2.Retrofit;
@@ -33,7 +34,7 @@ public class NetHelper {
     public static void check(CheckReq req,NetCallBack<NetBaseResp<CheckReq>> callBack) {
         getServer(LoginApi.class).check(req).enqueue(callBack);
     }
-    public static void pass(PassReq req, NetCallBack<NetBaseResp<PassReq>> callBack) {
+    public static void pass(PassReq req, NetCallBack<NetBaseResp<PassRespData>> callBack) {
         getServer(LoginApi.class).pass(req).enqueue(callBack);
     }
     private static  <T> T getServer(Class<T> tClass){

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
+import com.petting.app.account.store.LoginStore;
 import com.petting.app.account.view.LoginActivity;
 
 /**
@@ -11,6 +12,9 @@ import com.petting.app.account.view.LoginActivity;
  */
 
 public class LoginHelper {
+    public static boolean isLoginNow(){
+        return LoginStore.getIns().isLoginNew();
+    }
     public static void startLogin(Context context){
         startActivity(context, LoginActivity.class);
 

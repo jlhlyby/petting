@@ -1,6 +1,7 @@
 package com.petting.app.account.view;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.petting.app.R;
 import com.petting.app.account.view.base.AbsBaseLoginFragment;
@@ -17,6 +18,7 @@ import com.petting.app.view.CodeInputView;
 
 public class VerifyCodeFragment extends AbsBaseLoginFragment {
     CodeInputView codeView;
+    TextView hintTv;
 
     @Override
     protected int getLayoutRes() {
@@ -26,6 +28,8 @@ public class VerifyCodeFragment extends AbsBaseLoginFragment {
     @Override
     protected void initView(View root) {
         codeView = (CodeInputView) root.findViewById(R.id.v_code);
+        hintTv = (TextView) root.findViewById(R.id.tv_code_hint);
+        hintTv.setText(getString(R.string.login_verify_code_title,messenger.getPhone()));
     }
 
     @Override
@@ -48,8 +52,10 @@ public class VerifyCodeFragment extends AbsBaseLoginFragment {
                             case Contents.NET_STATUS_OK:
                                 transform(VerifyCodeFragment.this,new SetPwdFragment());
                                 return true;
+                            default:
+                                codeView.clearCode();
+                                return false;
                         }
-                        return false;
                     }
                 });
     }

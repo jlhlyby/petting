@@ -5,6 +5,6 @@ package com.petting.app.net.pojo.response;
  */
 
 public class PassRespData extends NetBaseData{
-    String userId;
-    String token;
+    public String userId;
+    public String token;
 }
